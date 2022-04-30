@@ -29,7 +29,7 @@ func TestCalculateIsBoolean2(t *testing.T) {
 		}
 	})
 
-	t.Run("should return true for 372", func(t *testing.T) {
+	t.Run("should return true for 370", func(t *testing.T) {
 		testCase := TestCase{
 			value: 370,
 			expected: true, //expected false
