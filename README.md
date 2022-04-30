@@ -1,3 +1,3 @@
 "# go-testStuff" 
-"# go-testStuff" 
-master11111
+
+#go base test in 3 ways
