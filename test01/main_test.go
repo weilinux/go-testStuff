@@ -60,3 +60,27 @@ func TestTableCalculate(t *testing.T) {
 	}
 
 }
+
+
+
+//yet another way
+/*
+type TestCase struct {
+	value int
+	expected bool
+	actual bool
+}
+func CalculateIsBoolean(x int) bool {
+	return false
+}
+func TestCalculateIsBoolean(t *testing.T) {
+	testCase := TestCase{
+		value: 371,
+		expected: true,
+	}
+	testCase.actual = CalculateIsBoolean(testCase.value)
+	if testCase.actual != testCase.expected {
+		t.Fail()
+	}
+}
+*/
