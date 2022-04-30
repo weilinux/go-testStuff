@@ -14,7 +14,7 @@ func TestCalculateIsBoolean(t *testing.T) {
 	}
 }
 
-func TestCalculateIsBoolean2(t *testing.T) {
+func TestCalculateIsArmstrongNumber(t *testing.T) {
 
 	//multiple t.Run case, or  put in for range
 	t.Run("should return true for 371", func(t *testing.T) {
