@@ -64,7 +64,6 @@ func TestTableCalculate(t *testing.T) {
 
 
 //yet another way
-/*
 type TestCase struct {
 	value int
 	expected bool
@@ -83,4 +82,3 @@ func TestCalculateIsBoolean(t *testing.T) {
 		t.Fail()
 	}
 }
-*/
