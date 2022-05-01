@@ -53,4 +53,10 @@ func TestNegativeFilterUnique(t *testing.T) {
 
 	//there are many assert methods to simplify test
 	assert.NotEqual(t, expected, FilterUnique(input))
+
+	//there are many assert methods to simplify test
+	//assert.NotNil(t, total, "the total number should not be nil")
+	//assert.Equal()
+	//assert.Assertions{}
+
 }
