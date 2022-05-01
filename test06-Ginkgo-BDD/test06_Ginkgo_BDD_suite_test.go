@@ -8,8 +8,6 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-
-
 //ginkgo docs https://onsi.github.io/ginkgo/#your-first-ginkgo-suite
 //ginkgo bootstrap (Cmder) generates *_suite_test.go file
 func TestTest06GinkgoBDD(t *testing.T) {
@@ -18,7 +16,9 @@ func TestTest06GinkgoBDD(t *testing.T) {
 }
 
 var _ = Describe("Person.IsChild", func() {
-	Context("when the person is a child", func() {
+
+	//skip XContext
+	XContext("when the person is a child", func() {
 		It("returns true", func() {
 			person := Person{Age: 10}
 			response := person.IsChild()
@@ -27,7 +27,8 @@ var _ = Describe("Person.IsChild", func() {
 		})
 	})
 
-	Context("when the person is not a child", func() {
+	//skip XContext
+	XContext("when the person is not a child", func() {
 		BeforeEach(func() {
 			log.Print("not a child")
 		})
@@ -37,7 +38,7 @@ var _ = Describe("Person.IsChild", func() {
 
 		//XIt means skip the test block
 		//FIt means skip the before test block
-		XIt("returns true", func() {
+		It("returns true", func() {
 			person := Person{Age: 100}
 			response := person.IsChild()
 			Expect(response).To(BeFalse())
@@ -45,10 +46,14 @@ var _ = Describe("Person.IsChild", func() {
 		})
 	})
 
-	
-
-
+	//skip: XDescribeTable
+	DescribeTable("isChild table test",
+		func(age int, expected bool) {
+			p := Person{Age: age}
+			Expect(p.IsChild()).To(Equal(expected))
+		},
+		Entry("when is a child", 10, true),
+		Entry("when is not a child", 18, false),
+	)
 
 })
-
-
