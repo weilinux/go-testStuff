@@ -7,12 +7,12 @@ import (
 
 func TestFilterUnique(t *testing.T) {
 	input := []Developer{
-		Developer{Name: "Elliot"},
-		Developer{Name: "Elliot"},
-		Developer{Name: "David"},
-		Developer{Name: "Alex"},
-		Developer{Name: "Eva"},
-		Developer{Name: "Alan"},
+		{Name: "Elliot"},
+		{Name: "Elliot"},
+		{Name: "David"},
+		{Name: "Alex"},
+		{Name: "Eva"},
+		{Name: "Alan"},
 	}
 
 	expected := []string{
@@ -23,11 +23,10 @@ func TestFilterUnique(t *testing.T) {
 		"Alan",
 	}
 
-	//1 testify way (simplify the testing process
+	//1 testify way (simplify the testing process)
 	assert.Equal(t, expected, FilterUnique(input))
 
-
-/*  //2 without testify
+	/*  //2 without testify
 	result := FilterUnique(input)
 	if ! reflect.DeepEqual(result, expected) {
 		t.Fail()
@@ -38,12 +37,12 @@ func TestFilterUnique(t *testing.T) {
 //negative test
 func TestNegativeFilterUnique(t *testing.T) {
 	input := []Developer{
-		Developer{Name: "Elliot"},
-		Developer{Name: "Elliot"},
-		Developer{Name: "David"},
-		Developer{Name: "Alex"},
-		Developer{Name: "Eva"},
-		Developer{Name: "Alan"},
+		{Name: "Elliot"},
+		{Name: "Elliot"},
+		{Name: "David"},
+		{Name: "Alex"},
+		{Name: "Eva"},
+		{Name: "Alan"},
 	}
 
 	expected := []string{

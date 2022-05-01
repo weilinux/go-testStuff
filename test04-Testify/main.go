@@ -4,7 +4,7 @@ import "fmt"
 
 type Developer struct {
 	Name string
-	Age int
+	Age  int
 }
 
 func FilterUnique(developers []Developer) []string {
@@ -14,19 +14,13 @@ func FilterUnique(developers []Developer) []string {
 		check[developer.Name] = 1
 	}
 
-	for name, _ := range check {
+	for name := range check {
 		uniques = append(uniques, name)
 	}
 	return uniques
 }
 
-
-
-
-
 func main() {
 	fmt.Println("Get to Started with Testify library")
-
-
 
 }
