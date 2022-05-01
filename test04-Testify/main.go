@@ -14,7 +14,7 @@ func FilterUnique(developers []Developer) []string {
 		check[developer.Name] = 1
 	}
 
-	for name := range check {
+	for name, _ := range check {
 		uniques = append(uniques, name)
 	}
 	return uniques
@@ -26,7 +26,6 @@ func FilterUnique(developers []Developer) []string {
 
 func main() {
 	fmt.Println("Get to Started with Testify library")
-
 
 
 

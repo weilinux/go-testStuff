@@ -1,6 +1,9 @@
 package main
 
-import "testing"
+import (
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
 
 func TestFilterUnique(t *testing.T) {
 	input := []Developer{
@@ -14,15 +17,41 @@ func TestFilterUnique(t *testing.T) {
 
 	expected := []string{
 		"Elliot",
-		"david",
+		"David",
 		"Alex",
 		"Eva",
 		"Alan",
 	}
 
+	//1 testify way (simplify the testing process
+	assert.Equal(t, expected, FilterUnique(input))
+
+
+/*  //2 without testify
 	result := FilterUnique(input)
+	if ! reflect.DeepEqual(result, expected) {
+		t.Fail()
+	}
+	*/
+}
 
+//negative test
+func TestNegativeFilterUnique(t *testing.T) {
+	input := []Developer{
+		Developer{Name: "Elliot"},
+		Developer{Name: "Elliot"},
+		Developer{Name: "David"},
+		Developer{Name: "Alex"},
+		Developer{Name: "Eva"},
+		Developer{Name: "Alan"},
+	}
 
+	expected := []string{
+		"Elliot",
+		"David",
+		"Alan",
+	}
 
-
+	//there are many assert methods to simplify test
+	assert.NotEqual(t, expected, FilterUnique(input))
 }
